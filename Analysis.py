@@ -29,7 +29,17 @@ def generate_Key(key_32chars):
     return key
 
 
+def modify_Key(original_key_bytes):
+    last_byte = original_key_bytes[-1]
+    flipped_last_byte = last_byte ^ 0b1
+    modified_key_bytes = original_key_bytes[:-1] + bytes([flipped_last_byte])
 
+    try:
+        modified_key_str = modified_key_bytes.decode('ascii')
+    except UnicodeDecodeError:
+        modified_key_str = "<Cannot decode bytes to ASCII>"
+
+    return  modified_key_str, modified_key_bytes
 
 
 
