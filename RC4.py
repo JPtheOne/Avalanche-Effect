@@ -32,19 +32,20 @@ def rc4_decrypt_file(encrypted_file_path, key):
     cipher = ARC4.new(key)
     plaintext = cipher.decrypt(ciphertext)
     
+    # The naming here should mirror how the encrypted file is named during the encryption process
     decrypted_file_path = os.path.join(
         os.path.dirname(encrypted_file_path),
         "RC4-Decrypted_" + os.path.basename(encrypted_file_path).replace("RC4-EN", "", 1)
     )
+
+    with open(decrypted_file_path, 'wb') as f:
+        f.write(plaintext)
+
+    return decrypted_file_path  # Make sure this return statement is correctly aligned and not within any loop or conditional.
+
 
 
     with open(decrypted_file_path, 'wb') as f:
         f.write(plaintext)
 
 
-
-
-#key = rc4_encrypt_file("AES.Encrypted_doc1.docx")
-#print(key)
-#key =b'\x93\xf8\x19\xcd8\xc8\xbc\xd8:KF\xa5dm[Y'
-#rc4_decrypt_file("RC4-EAES.Encrypted_doc1.docx",key)

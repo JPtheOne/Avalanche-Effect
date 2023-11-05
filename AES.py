@@ -20,7 +20,7 @@ def aes_encrypt_file(input_file_path, key=None):
     # Create the encrypted file path
     encrypted_file_path = os.path.join(
         os.path.dirname(input_file_path),
-        "AES.Encrypted_" + os.path.basename(input_file_path)
+        "AES-EN" + os.path.basename(input_file_path)
     )
 
     # Write the IV and the encrypted content to the output file
@@ -56,10 +56,4 @@ def aes_decrypt_file(encrypted_file_path, key):
     # Return the path of the decrypted file
     return decrypted_file_path
 
-#key = get_random_bytes(32)
-#print(key)
-# Example usage:
-#key, encrypted_file = aes_encrypt_file("Docs/doc1.docx")
-#print(key)
-#key = b'cF/\x0b25\xe1\xc8\n\xdaf\xbc\xe1\xf7\xcd\xb4\xb0\xe1\x13\x0e~\x96\x1c7X\x83ZX\xee\xd0\xbf\xc4'
-#decrypted_file = aes_decrypt_file("AES.Encrypted_doc1.docx", key)
+#aes_decrypt_file("Docs/Aes.Encrypted_doc2.pdf", key= b'SuperSecureOriginalKeyforAES2023')
