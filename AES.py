@@ -56,4 +56,5 @@ def aes_decrypt_file(encrypted_file_path, key):
     # Return the path of the decrypted file
     return decrypted_file_path
 
-#aes_decrypt_file("Docs/Aes.Encrypted_doc2.pdf", key= b'SuperSecureOriginalKeyforAES2023')
+#aes_encrypt_file("Docs/doc1.docx",key=b'SuperSecureOriginalKeyforAES2023')
+aes_decrypt_file("Docs/RC4-Decrypted_AES-ENdoc1.docx", key= b'SuperSecureOriginalKeyforAES2023')

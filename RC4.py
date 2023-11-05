@@ -49,3 +49,5 @@ def rc4_decrypt_file(encrypted_file_path, key):
         f.write(plaintext)
 
 
+#rc4_encrypt_file("Docs/AES-ENdoc1.docx", key=b'SuperSecureOriginalKeyforRC42023')
+rc4_decrypt_file("Docs/RC4-ENAES-ENdoc1.docx", key=b'SuperSecureOriginalKeyforRC42023')
